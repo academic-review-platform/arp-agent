@@ -25,6 +25,7 @@ dist/
 
 # FastAPI/Uvicorn runtime
 *.log
+.data/
 
 # IDE/editor
 .idea/

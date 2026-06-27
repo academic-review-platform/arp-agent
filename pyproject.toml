@@ -4,5 +4,8 @@ version = "0.1.0"
 description = "Add your description here"
 requires-python = ">=3.12"
 dependencies = [
+    "chromadb>=1.5.9",
+    "dspy>=3.2.1",
     "fastapi[standard]>=0.138.0",
+    "httpx>=0.28.1",
 ]
