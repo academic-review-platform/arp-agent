@@ -74,3 +74,15 @@ class BibliographyVectorStore:
             documents=documents,
             metadatas=metadatas,
         )
+
+    def get_summary(self, bibliography_id: str) -> str | None:
+        """Retrieves the summary of a bibliography by its ID, or None if not found."""
+        result = self.collection.get(ids=[f"{bibliography_id}:summary"])
+        documents = result.get("documents") or []
+        return documents[0] if documents else None
+
+    def get_content(self, bibliography_id: str) -> str | None:
+        """Retrieves the full content of a bibliography by its ID, or None if not found."""
+        result = self.collection.get(ids=[f"{bibliography_id}:content"])
+        documents = result.get("documents") or []
+        return documents[0] if documents else None
